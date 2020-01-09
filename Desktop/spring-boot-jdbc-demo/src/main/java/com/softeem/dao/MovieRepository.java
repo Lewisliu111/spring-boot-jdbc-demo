@@ -41,16 +41,22 @@ public class MovieRepository {
 
         MovieRowMapper mapper = new MovieRowMapper();
 
-        /**
-         * spring-jdbc 会循环/遍历调用 mapper 对象的 rowMap 方法将结果集中的数据转化成 Movie 对象。
-         */
-        List<Movie> list = template.query("select * from mid_movie_performer where movie_id = ?",
-                mapper,
-                id);
+        List<Movie> list = template.query("select * from mid_movie_performer ,performer where movie_id = ?",
+                mapper,id);
 
         return list.get(0);
+    }
+
+    public List<String> selectMovieIdByDirector(String name) {
+        MovieRowMapper mapper=new MovieRowMapper()
+        List<String> movieids=null;
+        List<Movie> list = template.query("select * from mid_movie_performer, performer when name = ? and " +
+                       "performer.id = mid_m",
+        mapper,
+        name);
 
 
+        return movieids;
     }
 }
 

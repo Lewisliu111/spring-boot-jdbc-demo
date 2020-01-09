@@ -5,6 +5,8 @@ import com.softeem.dao.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 为什么 MVC 分层有三层的概念：web、service、dao 层？
  * 为什么不是 web 层调用 dao 层的方法，要去调 service，再通过service 调 dao？
@@ -30,6 +32,35 @@ public class MovieService {
 
     public Movie getMovie(String id) {
         return movieRepository.selectByPrimaryKey(id);
+    }
+
+
+    public List<Movie> getByDirectorName(String name) {
+        movieRepository.selectMovieIdByDirector(name);
+    }
+
+    public List<Movie>  getByWriterName(String name){
+
+    }
+
+    public List<Movie> getByActorName(String name) {
+
+    }
+
+    public List<Movie> getByType(String type){
+
+    }
+
+    public void deleteById(String id) {
+
+    }
+
+    public void updateByid(String id) {
+
+    }
+
+    public void addMovie(Movie movie){
+
     }
 
 
