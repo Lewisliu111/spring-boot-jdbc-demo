@@ -29,7 +29,7 @@ public class MovieService {
     private MovieRepository movieRepository;
 
     public Movie getMovie(String id) {
-        return movieRepository.selectByPK(id);
+        return movieRepository.selectByPrimaryKey(id);
     }
 
 

@@ -1,6 +1,5 @@
 package com.softeem.web;
 
-import com.softeem.bean.Student;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @RequestMapping("/hello")
-    public Student demo() {
-        Student student = new Student(9527, "tom", 19, "192xxxxxxxx");
-        return student;
-    }
+//    @RequestMapping("/hello")
+//    public Student demo() {
+//        Student student = new Student(9527, "tom", 19, "192xxxxxxxx");
+//        return student;
+//    }
 }

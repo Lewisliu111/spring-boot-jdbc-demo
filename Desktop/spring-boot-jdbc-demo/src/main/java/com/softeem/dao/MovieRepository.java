@@ -44,7 +44,7 @@ public class MovieRepository {
         /**
          * spring-jdbc 会循环/遍历调用 mapper 对象的 rowMap 方法将结果集中的数据转化成 Movie 对象。
          */
-        List<Movie> list = template.query("select * from movie where id = ?",
+        List<Movie> list = template.query("select * from mid_movie_performer where movie_id = ?",
                 mapper,
                 id);
 
